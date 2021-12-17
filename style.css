@@ -1,0 +1,448 @@
+/*
+Campus Training Prueba
+Diana Fuertes
+15 DIC 2021
+*/
+/* Variables */
+:root {
+
+    --texto: #111111;
+    --fondo: #F4F4F5;
+    --titles: #181946;
+    --acento1: #25BEAD;
+    --acento2: rgba(81, 83, 199, 0.2);
+    --acento3: rgba(81, 83, 199, 1);
+
+    --open: "Open Sans", Helvetica, sans-serif;
+    --cond: "Open Sans Condensed", Helvetica, sans-serif;
+
+}
+
+/* Jerarquía */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    font-size: 16px;
+    font-family: var(--open);
+    color: var(--texto);
+    background-color: var(--fondo);
+    line-height: 150%;
+    padding: 1rem;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 700;
+    line-height: 125%;
+    margin: 1.5em auto 1em;
+}
+
+h1, h2 {
+    font-family: var(--cond);
+    color: var(--titles);
+}
+
+h1 > span, h2 > span {
+    display: block;
+    color: var(--acento1);
+}
+
+h1 {
+    font-size:2rem;
+    margin-left: 200px;
+}
+
+h2 {
+    font-size:1.5rem;
+    background: var(--fondo);
+    position: sticky;
+    top: 0;
+    padding-bottom:1rem;
+    padding-top: 0.5rem;
+    z-index:1;
+    border-bottom: solid 1px white;
+    box-shadow: 0px 20px 10px -20px rgb(0 0 0 / 25%);
+
+}
+
+h3, h4 {
+    font-family: var(--open);
+    color: var(--acento1);
+}
+
+h3 {
+    font-size: 1.25rem;
+    position:relative;
+    text-indent: 1.25em;
+    
+}
+
+h3:before {
+    content: "→ ";
+    position:absolute;
+    left: -1.25em;
+}
+
+h4 {
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 150%;
+    padding-bottom: 1em;
+}
+
+header {
+    align-items: flex-end;
+    display: flex;
+    background-image: url(images/header.png);
+    background-repeat: no-repeat;
+    background-position:left 50%;
+    background-size: contain;
+    min-height:50vh;
+}
+
+footer p {
+    font-size:0.75em;
+    padding-bottom:0.25em;
+    text-align:right;
+
+}
+
+img {
+    max-width: 100%;
+    margin: 0 auto;
+    display:block;
+}
+
+a {
+    color: var(--acento3);
+    text-decoration: none;
+    transition:0.5s;
+}
+
+a:hover {
+    color: var(--acento1);
+    text-decoration: underline;
+}
+
+/* Listas */
+
+ul, ol {
+    margin-left: 3em;
+    margin-bottom: 1.5em;
+}
+
+li:not(:last-child) {
+    padding-bottom: 0.5em;
+}
+
+ol ul {
+    margin-top: 0.5em;
+    font-size:0.9em;
+}
+
+.intro ol > li {
+    font-weight: 600;
+}
+.intro ol ul li {
+    font-weight: 400;
+    padding-bottom:0;
+}
+
+/* Posiciones */
+
+.definicion {
+    display: flex;
+    min-height:80px;
+}
+
+.definicion img {
+    width: 72px;
+    height: 72px;
+    margin-right: 1.25em;
+}
+
+a.totop {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    display:block;
+    padding: 1em;
+    background: var(--acento3);
+    color: var(--fondo);
+    border-radius:100px;
+    font-weight: bold;
+    text-decoration: none;
+    z-index:2;
+}
+
+
+/* Enfasis */
+
+.cuadro {
+    background-color: var(--acento2);
+    padding: 1rem;
+}
+
+.especial {
+    padding: 1em 1em 1em 3em;
+    border: solid 2px var(--acento3);
+    margin: 0;
+}
+
+.cuadro p:last-child, .cuadro ul {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+p.destacado {
+    color:var(--acento3);
+    font-style: italic;
+    font-size:1.25em;
+    text-align:center;
+}
+
+span.info {
+    color: var(--acento1);
+    font-style: italic;
+}
+
+/* Imagenes */
+
+.imagen1 {
+    background-image: url(images/mujer-telefono.png);
+    min-height: 400px;
+    width: 100%;
+    background-size: auto 90%;
+    background-repeat: no-repeat;
+    background-position: 70% 50%;
+}
+
+.imagen2 {
+    background-image: url(images/persona-circulacion.png);
+    min-height:300px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.fondo-paqueteria {
+    background-image: url(images/persona-paquetes.png);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: 400px auto;
+}
+
+/* AJUSTES SOLO MOVIL */
+
+@media (max-width: 800px) { 
+
+    #imagentf {
+        float: right;
+        width: 33%;
+        margin-top: -4rem;
+    }
+
+    .columnas75 .cuadro {
+        margin-bottom: 1rem;
+    }
+
+    .columnas75 > div > p {
+        margin-left: 2em;
+    }
+
+    .fondo-paqueteria {
+        padding-bottom: 300px;
+    }
+
+    .icono-vertical p {
+        width: 80%;
+    }
+
+}
+
+/* PANTALLAS MEDIANAS */
+
+@media (min-width: 800px) { 
+
+    html, body {
+        font-size: 16px;
+        line-height: 150%;
+        padding: 1rem 2rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .flex {
+        display:flex;
+    }
+
+    article > p, article > img {
+        max-width: 85%;
+        margin: auto;
+    }
+
+    /** INTRO - MEDIANAS **/
+
+    .columnas57 .bloque1 {
+        width: 40%;
+        margin-right: 2rem;
+    }
+    .columnas57 .bloque2 {
+        width: 60%;
+        display:flex;
+        flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+
+    }
+    .columnas57 .bloque1 p, .columnas57 .bloque1 li {
+        font-size: 0.85rem;
+        line-height:150%;
+    }
+    .columnas57 .bloque1 ul {
+        margin-left: 1rem;
+    }
+    .especial {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: inherit;
+    }
+
+    /** GRID32 - MEDIANAS **/
+
+    .grid32 {
+        flex-direction: column;
+        padding-bottom:2rem;
+    }
+    .grid32 .bloque1 {
+        display: flex;
+        margin-bottom: 1rem;
+    }
+
+    .grid32 .bloque1 .cuadro:not(:last-child) {
+        margin-right: 1rem;
+    }
+    .grid32 .bloque2 {
+        display:flex;
+        flex-direction:row-reverse;
+
+    }
+    .grid32 .bloque2 .imagen1 {
+        width: 34%;
+        background-size: cover;
+        background-position: -60px 0;
+    }
+    .grid32 .bloque2 .cuadro {
+        width: 66%;
+    }
+
+    /* Columnas 66 */
+
+    .columnas66 .bloque {
+        width: 45%;
+    }
+    
+    .columnas66 {
+        justify-content: space-between;
+    }
+
+    .icono-horizontal {
+        margin: 1rem 4rem 1rem 8rem;
+    }
+
+    .imagen2 {
+        min-height: 200px;
+    }
+
+    .icono-vertical {
+        flex-direction: column;
+        align-items: center;
+        width: 25%;
+    }
+    
+    .icono-vertical p {
+        font-size: 0.9em;
+        text-align: center;
+        padding-top: 1rem;
+    }
+    
+    .icono-vertical p strong {
+        display: block;
+        text-transform: uppercase;
+        font-size: 1rem;
+        color: var(--acento3);
+    }
+    
+    .icono-vertical img {
+        margin: 1rem auto 0.5rem;
+    }
+
+    .columnas75 .bloque1 {
+        max-width: 55%;
+    }
+ 
+    .columnas75 .bloque2 {
+        width: 45%;
+        margin-left:2rem;
+        padding-bottom: 250px;
+    }
+
+    .columnas75 .cuadro {
+        margin-bottom: 1rem;
+        min-height: 10rem;
+    }
+
+    .columnas75 {
+        padding-bottom: 2rem;
+    }
+
+    .flex.columnas82 img {
+        width: 30%;
+        margin-right:1rem;
+    }
+    
+    .flex.columnas82 {
+        align-items: center;
+        flex-direction: row-reverse;
+    }
+    .iconoh {
+        flex-direction: column;
+    }
+
+}
+
+@media (min-width: 1200px) { 
+
+    html, body {
+        font-size: 18px;
+        line-height: 150%;
+        padding: 1rem 2rem;
+    }
+    h1 {
+        margin-left: 30%;
+    }
+    
+    header {
+        background-position-x: 10%;
+        margin-bottom: 2rem;
+    }
+
+}
